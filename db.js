@@ -4,6 +4,7 @@ const client = new MongoClient(process.env.MONGODB_URI || 'mongodb+srv://admin:d
 
 async function db() {
     await client.connect();
+    console.log("conected to db")
     const db = client.db('hltv');
     const teams = db.collection('teams');
     const players = db.collection('players');

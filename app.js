@@ -19,6 +19,12 @@ app.get('/', async (req, res) => {
 }
 })
 
+
+app.get('/ip', (req, res) => {
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  console.log(ip);
+})
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
