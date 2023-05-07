@@ -22,7 +22,7 @@ app.get('/', async (req, res) => {
 
 app.get('/ip', (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-  console.log(ip);
+  return res.json(ip);
 })
 
 app.listen(port, () => {
