@@ -4,11 +4,11 @@ const db = require('./db');
 
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.send('Hello World!');
-});
+});*/
 
-app.get('/db', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const database = await db();
     const teams = await database.teams.find({}).toArray();
